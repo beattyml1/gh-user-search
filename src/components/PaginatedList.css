@@ -1,8 +1,12 @@
 
-.pagination ul {
+.pagination {
     display: inline-block;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0;
+    margin: 0 -15px;
+}
+
+.search-results-list {
+    padding: 0;
 }
 
 .pagination li {
@@ -16,4 +20,7 @@
 .pagination .break a {
     cursor: default;
     color: dodgerblue;
+}
+.search-results-list {
+    text-align: left;
 }

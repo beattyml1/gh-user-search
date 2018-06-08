@@ -25,14 +25,7 @@ export class PaginatedList extends React.Component {
 
         return (
             <div className={"paginated-search-results"}>
-                {header ? <h1>{header}</h1> : ""}
-                <ul className={"search-results-list"} role={"list"}>
-                    {items.map(item =>
-                        <div className={"search-result"} role={"listitem"}>
-                            <ItemComponent {...getItemProps(item)} />
-                        </div>
-                    )}
-                </ul>
+                {header ? <h2>{header}</h2> : ""}
                 <ReactPaginate previousLabel={"Previous"}
                                nextLabel={"Next"}
                                breakLabel={<a href="">...</a>}
@@ -44,6 +37,13 @@ export class PaginatedList extends React.Component {
                                containerClassName={"pagination"}
                                subContainerClassName={"pages pagination"}
                                activeClassName={"active"} />
+                <ul className={"search-results-list"} role={"list"}>
+                    {items.map(item =>
+                        <div className={"search-result"} role={"listitem"}>
+                            <ItemComponent {...getItemProps(item)} />
+                        </div>
+                    )}
+                </ul>
             </div>)
     };
 
@@ -63,9 +63,13 @@ export class PaginatedList extends React.Component {
         this.loadItems(offset, perPage);
     };
 
-    getDerivedStateFromProps = (props, state) => {
+    static getDerivedStateFromProps = (props, state) => {
         let itemSourceChanged = state.getItems !== props.getItems;
-        if (itemSourceChanged) this.loadItems(0, props.perPage);
-        return { ...this.state, getItems: props.getItems }; // Using this.state just in case the promise doesn't defer
+        return { ...state, getItems: props.getItems, itemSourceChanged };
     };
+    componentDidMount = () => {
+        if (this.state.itemSourceChanged) this.loadItems(0, this.props.perPage);
+    }
+
+    componentDidUpdate = this.componentDidMount;
 }

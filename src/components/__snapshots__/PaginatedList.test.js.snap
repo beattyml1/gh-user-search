@@ -4,13 +4,9 @@ exports[`creates expected mark up for 0 results 1`] = `
 <div
   className="paginated-search-results"
 >
-  <h1>
+  <h2>
     1 results
-  </h1>
-  <ul
-    className="search-results-list"
-    role="list"
-  />
+  </h2>
   <ul
     className="pagination"
   >
@@ -25,7 +21,7 @@ exports[`creates expected mark up for 0 results 1`] = `
         role="button"
         tabIndex="0"
       >
-        previous
+        Previous
       </a>
     </li>
     <li
@@ -176,9 +172,13 @@ exports[`creates expected mark up for 0 results 1`] = `
         role="button"
         tabIndex="0"
       >
-        next
+        Next
       </a>
     </li>
   </ul>
+  <ul
+    className="search-results-list"
+    role="list"
+  />
 </div>
 `;

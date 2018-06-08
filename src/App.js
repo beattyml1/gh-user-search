@@ -3,23 +3,36 @@ import logo from './logo.svg';
 import './App.css';
 import {SearchBox} from "./components/SearchBox";
 import {PaginatedList} from "./components/PaginatedList";
+import * as Users from './services/UsersRest'
+import {User} from "./components/User";
 
 class App extends Component {
-  render() {
+  constructor() {
+      super();
+      this.state = { searchQuery: '' }
+  }
+
+  search = (searchQuery) => {
+      this.setState({ searchQuery })
+  }
+
+  render = () => {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">GitHub User Search</h1>
         </header>
-        <p className="App-intro">
-            <SearchBox label={"Search GitHub Users"}/>
-            <PaginatedList
-                perPage = {10}
-                getItems={() => Promise.resolve({items:[], totalResults: 0 })}
-                itemComponent={(props) => <div>Hello World</div>}
-                getHeader={(totalResults) => `1 results`}
-                getItemProps={x=>x}/>
-        </p>
+          <div className={"user-search-widget"}>
+              <SearchBox label={"Search GitHub Users"} onSearch={this.search}/>
+              <PaginatedList
+                  perPage = {10}
+                  getItems={() => Users.searchDetailed(this.state.searchQuery)}
+                  itemComponent={User}
+                  getHeader={(totalResults) =>
+                      !totalResults ? null :
+                      totalResults !== 1 ? `${totalResults} Users Found` : '1 User Found'}
+                  getItemProps={x=>x}/>
+          </div>
       </div>
     );
   }

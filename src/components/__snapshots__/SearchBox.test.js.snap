@@ -2,19 +2,24 @@
 
 exports[`creates expected mark up for 0 results 1`] = `
 <form
-  onSubmit={undefined}
+  className="search"
+  onSubmit={[Function]}
   role="search"
 >
   <input
     aria-label="Search Something"
-    autofocus={true}
-    onChange={undefined}
+    autoFocus={true}
+    className="search-box"
+    name="query"
+    onChange={[Function]}
     placeholder="Search Something"
     role="search"
     spellCheck="false"
     type="search"
+    value=""
   />
   <button
+    className="search-submit"
     type="submit"
   >
     Search
