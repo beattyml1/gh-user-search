@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`creates expected mark up for 0 results 1`] = `
+<form
+  onSubmit={undefined}
+  role="search"
+>
+  <input
+    aria-label="Search Something"
+    autofocus={true}
+    onChange={undefined}
+    placeholder="Search Something"
+    role="search"
+    spellCheck="false"
+    type="search"
+  />
+  <button
+    type="submit"
+  >
+    Search
+  </button>
+</form>
+`;
