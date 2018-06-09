@@ -2,7 +2,8 @@
 
 exports[`creates expected mark up for 0 results 1`] = `
 <div
-  className="paginated-search-results"
+  className="paginated-list"
+  hidden={true}
 >
   <h2>
     1 results
@@ -177,8 +178,7 @@ exports[`creates expected mark up for 0 results 1`] = `
     </li>
   </ul>
   <ul
-    className="search-results-list"
-    role="list"
+    className="list"
   />
 </div>
 `;

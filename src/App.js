@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import {SearchBox} from "./components/SearchBox";
-import {PaginatedList} from "./components/PaginatedList";
+import {SearchBox} from "./components/SearchBox/SearchBox";
+import {PaginatedList} from "./components/PaginatedList/PaginatedList";
 import * as Users from './services/UsersRest'
-import {User} from "./components/User";
+import {User} from "./components/User/User";
+import {thingCountLabel} from "./services/Pluralization";
 
 class App extends Component {
   constructor() {
@@ -27,11 +27,9 @@ class App extends Component {
               <PaginatedList
                   perPage = {30}
                   getItems={(params) => Users.searchDetailed(this.state.searchQuery, params)}
+                  getKey={item=>item.login}
                   itemComponent={User}
-                  getHeader={(totalResults) =>
-                      !totalResults ? null :
-                      totalResults !== 1 ? `${totalResults} Users Found` : '1 User Found'}
-                  getItemProps={x=>x}/>
+                  getHeader={(totalResults) => `${thingCountLabel(totalResults, 'User')} Found` } />
           </div>
       </div>
     );

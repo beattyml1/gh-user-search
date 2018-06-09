@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`creates expected mark up for 0 results 1`] = `
+<ul
+  className="list"
+/>
+`;
+
+exports[`creates expected mark up for 2 results 1`] = `
+<ul
+  className="list"
+>
+  <div
+    className="list-item"
+    role="listitem"
+  >
+    <div>
+      a1
+    </div>
+  </div>
+  <div
+    className="list-item"
+    role="listitem"
+  >
+    <div>
+      a2
+    </div>
+  </div>
+</ul>
+`;

@@ -18,8 +18,6 @@ export class SearchBox extends React.Component {
     }
 
     render = () => {
-        let id = this.props.id || "search";
-
         return (
             <form role={"search"} onSubmit={this.onSearch} className={"search"}>
                 <input type={"search"} role={"search"} name={"query"} placeholder={this.props.label} value={this.state.query||''}
