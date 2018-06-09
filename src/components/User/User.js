@@ -22,6 +22,9 @@ export const User = (user) =>
                 <a className={"following"} href={user.followingLink}>
                     {thingCountLabel(user.following, 'following')}
                 </a>
+                <a className={"starred"} href={user.starredLink}>
+                    {thingCountLabel(user.starred, 'starred')}
+                </a>
             </div>
         </span>
     </div>

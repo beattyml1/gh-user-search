@@ -35,4 +35,8 @@ describe('pluralize', () => {
         let result = pluralize('following');
         expect(result).toBe('following');
     })
+    it('should do nothing if the word ends with ed', () => {
+        let result = pluralize('starred');
+        expect(result).toBe('starred');
+    })
 });

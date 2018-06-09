@@ -12,7 +12,7 @@ export function autoPluralize(count, thing) {
 export function pluralize(thing) {
     return (
         thing.endsWith('y') ? replaceEnd(thing, 1, 'ies') :
-        thing.endsWith('ing') ? thing :
+        thing.endsWith('ing') || thing.endsWith('ed') ? thing :
         `${thing}s`
     )
 }
