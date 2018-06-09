@@ -1,9 +1,9 @@
 .avatar {
-    width: 48px;
-    height: 48px;
+    width: 64px;
+    height: 64px;
     margin-right: 10px;
     vertical-align: text-top;
-    border-radius: 24px;
+    border-radius: 32px;
 }
 .user-info {
     display: block;
@@ -35,7 +35,7 @@
     margin-bottom: 10px;
 }
 
-.followers, .location {
+.user-stats a, .location {
     margin-right: 10px;
     color: slategray;
     font-size: .85em;

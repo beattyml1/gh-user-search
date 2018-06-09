@@ -25,8 +25,8 @@ class App extends Component {
           <div className={"user-search-widget"}>
               <SearchBox label={"Search GitHub Users"} onSearch={this.search}/>
               <PaginatedList
-                  perPage = {10}
-                  getItems={() => Users.searchDetailed(this.state.searchQuery)}
+                  perPage = {30}
+                  getItems={(params) => Users.searchDetailed(this.state.searchQuery, params)}
                   itemComponent={User}
                   getHeader={(totalResults) =>
                       !totalResults ? null :

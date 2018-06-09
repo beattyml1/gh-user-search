@@ -40,7 +40,12 @@ let userModel = user => ({
     company: user.company || '',
     stars: 0,
     followers: user.followers,
+    following: user.following,
+    publicRepositories: user.public_repos,
     avatarUrl: user.avatar_url,
+    followersLink: user.html_url + '?tab=followers',
+    repositoriesLink: user.html_url + '?tab=repositories',
+    followingLink: user.html_url + '?tab=following',
     location: user.location || ''
 });
 
