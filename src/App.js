@@ -25,7 +25,7 @@ class App extends Component {
           <div className={"user-search-widget"}>
               <SearchBox label={"Search GitHub Users"} onSearch={this.search}/>
               <PaginatedList
-                  perPage = {30}
+                  perPage = {10}
                   getItems={(params) => Users.searchDetailed(this.state.searchQuery, params)}
                   getKey={item=>item.login}
                   itemComponent={User}
