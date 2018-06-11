@@ -24,3 +24,5 @@ Primary testing in chrome light testing in Firefox and Safari. Expected to work 
 One change I would make in a larger app be to move UserListItem, UsersRest, and UsersGraphQL into a modules/Users folder with components and services sub-folders. Moving the other components and services could be left at root or moved into modules/common or similar.
 
 One piece of code that works but I don't like is a bit in the PaginatedList that does fun things with life cycles, it feels a bit off for unknown reasons and also adds some fragility to the App.js test.
+
+One thing I thought of jest testing but couldn't find out a good way, without significant research or talking to someone more experienced was a mouse click that triggers an async event since mouse clicks returning promises didn't seem like a wise move.
