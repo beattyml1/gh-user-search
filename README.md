@@ -15,6 +15,8 @@ I also started working on a GraphQL implementation the Users service but it requ
 
 There is one known bug: since the app is not authenticated when it reaches the rate limit it will stop working properly. I have downed the page size which helps. The real solution is to implement OAuth.
 
+There is currently no user notification of errors occurring.
+
 Performance on a slow network tolerable but not great. It could be improved by switching to GraphQL.
 
 Primary testing in chrome light testing in Firefox and Safari. Expected to work through polyfills in IE or Edge but did not have VMs setup to test and since I expect 0% of my users to be using them I ended up skipping.

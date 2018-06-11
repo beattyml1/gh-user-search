@@ -53,6 +53,7 @@ let userModel = ({ user, starred }) => ({
 });
 
 function getDetails(user) {
+    // Usually I've constructed URLs from known values. I got really excited about having HATEOAS urls and decided to use them. I can see merits in both methods.
     let userDetails = fetchJson(user.url);
     let starred = fetchJson(user.starred_url.substring(0, user.starred_url.indexOf('{')));
     return Promise.all([userDetails, starred]).then(([user, starred]) => ({ user, starred }));
