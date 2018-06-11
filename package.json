@@ -4,15 +4,14 @@
   "private": true,
   "homepage": "https://beattyml1.github.io/gh-user-search",
   "dependencies": {
-    "babel-plugin-relay": "^1.6.0",
+    "apollo-boost": "^0.1.7",
     "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-paginate": "^5.2.3",
-    "react-relay": "^1.6.0",
     "react-scripts": "1.1.4",
     "react-test-renderer": "^16.4.0",
-    "relay-compiler": "^1.6.0",
     "rxjs": "^6.2.0"
   },
   "scripts": {
