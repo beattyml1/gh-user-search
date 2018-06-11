@@ -6,7 +6,7 @@ I chose REST over GraphQL for the first run because it was both more familiar, t
 
 I used the following tools and libs in addition to react:
 - create-react-app
-- react-paginate
+- react-paginate (Wrapped in paginator control to preserve defaults)
 - jest
 - fetch-mock
 - RxJS (a minor, more for fun than anything usage)
@@ -20,3 +20,5 @@ There is currently no user notification of errors occurring.
 Performance on a slow network tolerable but not great. It could be improved by switching to GraphQL.
 
 Primary testing in chrome light testing in Firefox and Safari. Expected to work through polyfills in IE or Edge but did not have VMs setup to test and since I expect 0% of my users to be using them I ended up skipping.
+
+One change I would make in a larger app be to move UserListItem, UsersRest, and UsersGraphQL into a modules/Users folder with components and services sub-folders. Moving the other components and services could be left at root or moved into modules/common or similar.
