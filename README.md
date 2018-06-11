@@ -22,3 +22,5 @@ Performance on a slow network tolerable but not great. It could be improved by s
 Primary testing in chrome light testing in Firefox and Safari. Expected to work through polyfills in IE or Edge but did not have VMs setup to test and since I expect 0% of my users to be using them I ended up skipping.
 
 One change I would make in a larger app be to move UserListItem, UsersRest, and UsersGraphQL into a modules/Users folder with components and services sub-folders. Moving the other components and services could be left at root or moved into modules/common or similar.
+
+One piece of code that works but I don't like is a bit in the PaginatedList that does fun things with life cycles, it feels a bit off for unknown reasons and also adds some fragility to the App.js test.
