@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`creates expected mark up for 0 results 1`] = `
+<div
+  className="user"
+>
+  <a
+    href={undefined}
+  >
+    <img
+      alt="@dev Avatar"
+      className="avatar"
+      src=""
+    />
+  </a>
+  <span
+    className="user-info"
+  >
+    <h3>
+      <a
+        className="user-login"
+        href={undefined}
+      >
+        dev
+      </a>
+      <span
+        className="user-name"
+      >
+        Dev
+      </span>
+    </h3>
+    <div
+      className="location"
+    >
+      Pittsburgh
+    </div>
+    <div
+      className="user-stats"
+    >
+      <a
+        className="publicRepositories"
+        href=""
+      >
+        4 public repositories
+      </a>
+      <a
+        className="followers"
+        href=""
+      >
+        2 followers
+      </a>
+      <a
+        className="following"
+        href=""
+      >
+        2 following
+      </a>
+      <a
+        className="starred"
+        href=""
+      >
+        3 starred
+      </a>
+    </div>
+  </span>
+</div>
+`;
