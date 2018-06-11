@@ -7,11 +7,15 @@ describe('UserRest.search',  () => {
             fetchMock.get('begin:https://api.github.com/search/users', {
                 total_count: 5,
                 items: [
-                    {login:'janedev'}, {login:'johndev'}
+                    {login:'janedev', url: 'https://api.github.com/users/janedev', starred_url: 'https://api.github.com/users/janedev/starred{'},
+                    {login:'johndev', url: 'https://api.github.com/users/johndev', starred_url: 'https://api.github.com/users/johndev/starred{'}
                 ]
             });
-            fetchMock.get('begin:https://api.github.com/users', {name:'Developer'});
-        })
+            fetchMock.get('https://api.github.com/users/janedev/starred', []);
+            fetchMock.get('https://api.github.com/users/johndev/starred', []);
+            fetchMock.get('https://api.github.com/users/janedev', {login:'janedev',name:'Developer'});
+            fetchMock.get('https://api.github.com/users/johndev', {login:'johndev',name:'Developer'});
+        });
         afterEach(() => fetchMock.restore());
         it('should return totalResults of 5', async () => {
             expect.assertions(1);
