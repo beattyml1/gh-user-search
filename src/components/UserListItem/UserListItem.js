@@ -1,7 +1,7 @@
 import * as React from 'react';
-import './User.css'
+import './UserListItem.css'
 import {thingCountLabel} from "../../services/Pluralization";
-export const User = (user) =>
+export const UserListItem = (user) =>
     <div className={"user"}>
         <a href={user.link}>
             <img className={"avatar"} src={user.avatarUrl} alt={`@${user.login} Avatar`} />

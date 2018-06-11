@@ -3,7 +3,7 @@ import './App.css';
 import {SearchBox} from "./components/SearchBox/SearchBox";
 import {PaginatedList} from "./components/PaginatedList/PaginatedList";
 import * as Users from './services/UsersRest'
-import {User} from "./components/User/User";
+import {UserListItem} from "./components/UserListItem/UserListItem";
 import {thingCountLabel} from "./services/Pluralization";
 
 class App extends Component {
@@ -28,7 +28,7 @@ class App extends Component {
                   perPage = {10}
                   getItems={(params) => Users.searchDetailed(this.state.searchQuery, params)}
                   getKey={item=>item.login}
-                  itemComponent={User}
+                  itemComponent={UserListItem}
                   getHeader={(totalResults) => `${thingCountLabel(totalResults, 'User')} Found` } />
           </div>
       </div>
