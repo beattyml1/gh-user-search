@@ -1,3 +1,4 @@
+// This file is not used right now but I want to keep working on it
 import ApolloClient from 'apollo-boost';
 import gql from 'graphql-tag';
 
@@ -30,6 +31,4 @@ export function search(query, page, perPage) {
                 }
         }`,
     })
-    .then(data => console.log(data))
-    .catch(error => console.error(error));
 }
